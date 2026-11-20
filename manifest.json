@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "CiteSnap — MLA Deep-Link Quote & Citation Clipper",
+  "version": "1.4.0",
+  "description": "Clip quotes with W3C text-fragment deep links and authentic MLA 9th edition in-text & Works Cited formatting.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CiteSnap",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "clip-quote": {
+      "suggested_key": {
+        "default": "Alt+X",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Clip highlighted quote with deep-link and MLA metadata"
+    }
+  }
+}
