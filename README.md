@@ -108,8 +108,4 @@ CiteSnap was built using the following official web standards, browser APIs, and
 
 
 
-## License
-
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
-```
 
